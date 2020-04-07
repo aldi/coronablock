@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CoronaBLOCK for Facebook</title>
+    <meta charset="utf-8" />
+    <script src="js/storage.js" defer></script>
+    <script src="js/popup.js" defer></script>
+    <link type="text/css" rel="stylesheet" media="all" href="css/styles.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/popup.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo-text">
+        <label class="title">CoronaBLOCK is:</label>
+      </div>
+      <div class="onoffswitch">
+        <div class="button r" id="button-3">
+          <input type="checkbox" class="checkbox" id="onoff" />
+          <div class="knobs"></div>
+          <div class="layer"></div>
+        </div>
+      </div>
+      <p id="subtext">Coronavirus posts <b id="subtext-verb">will</b> appear on your Facebook feed</p>
+      <p id="subtext2">
+        <b> Please reload the page </b>
+      </p>
+      <p id="subtext3">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            d="M17.65 6.35A7.95 7.95 0 0 0 12 4V1L7 6l5 5V7c2.76 0 5 2.24 5 5a5 5 0 1 1-8.66-3.54L6.9 7.02A7 7 0 1 0 19 12c0-1.93-.78-3.68-2.05-4.95z"
+          />
+        </svg>
+        <b> Please reload the page </b>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            d="M17.65 6.35A7.95 7.95 0 0 0 12 4V1L7 6l5 5V7c2.76 0 5 2.24 5 5a5 5 0 1 1-8.66-3.54L6.9 7.02A7 7 0 1 0 19 12c0-1.93-.78-3.68-2.05-4.95z"
+          />
+        </svg>
+      </p>
+      <button id="refresh-btn" class="refresh-button" type="button">Reload Page</button>
+      <div class="post-blocked">Posts blocked: <span class="blocked">-</span></div>
+      <div class="warning">This will not work on this site. Please go to Facebook and refresh the page.</div>
+    </div>
+    <div class="container">
+      <p class="title">If You Feel Better</p>
+      <ul class="listgroup">
+        <li class="listgroupitem">
+          <a title="Click to share!" href="#" id="share">
+            <div class="badge">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.5 2.5 0 0 0 0-1.39l7.05-4.11A3 3 0 1 0 14 5a3 3 0 0 0 .04.49L7 9.6a3 3 0 1 0 0 4.8l7.05 4.11A3 3 0 1 0 18 16.08z"
+                />
+              </svg>
+            </div>
+            <span class="maintext">Share this on Facebook</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <p class="title">Did we miss a post?</p>
+      <ul class="listgroup report-group">
+        <li class="listgroupitem">
+          <a title="Click here to go to the report page!" href="#" id="report">
+            <span class="maintext report-text">Click here to report it!</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
