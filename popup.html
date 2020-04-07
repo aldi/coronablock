@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>CoronaBLOCK for Facebook</title>
+  <script src="js/external/jquery-1.11.1.min.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/popup.js"></script>
+  <link type="text/css" rel="stylesheet" media="all" href="css/fa.min.css">
+  <link type="text/css" rel="stylesheet" media="all" href="css/styles.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="css/popup.css" />
+  <style>
+    .toggle-button-cover {
+      display: table-cell;
+      position: relative;
+      width: 200px;
+      box-sizing: border-box;
+    }
+
+    .button-cover {
+      margin: 20px;
+      border-radius: 4px;
+    }
+
+    .button-cover:before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #d7e3e3;
+      font-size: 12px;
+      line-height: 1;
+      padding: 5px;
+    }
+
+    .button-cover,
+    .knobs,
+    .layer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .button {
+      position: relative;
+      top: 50%;
+      width: 74px;
+      height: 36px;
+      margin: -20px auto 0 auto;
+      overflow: hidden;
+    }
+
+    .button.r,
+    .button.r .layer {
+      border-radius: 100px;
+    }
+
+    .button.b2 {
+      border-radius: 2px;
+    }
+
+    .checkbox {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .knobs {
+      z-index: 2;
+    }
+
+    .layer {
+      width: 100%;
+      background-color: #ebf7fc;
+      transition: 0.3s ease all;
+      z-index: 1;
+    }
+
+    #button-3 .knobs:before {
+      content: 'OFF';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 20px;
+      height: 10px;
+      color: #fff;
+      font-size: 10px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1;
+      padding: 9px 4px;
+      background-color: #F44336;
+      border-radius: 50%;
+      transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+    }
+
+    #button-3 .checkbox:active+.knobs:before {
+      width: 46px;
+      border-radius: 100px;
+    }
+
+    #button-3 .checkbox:checked:active+.knobs:before {
+      margin-left: -26px;
+    }
+
+    #button-3 .checkbox:checked+.knobs:before {
+      content: 'ON';
+      left: 42px;
+      background-color: rgb(0, 206, 51);
+    }
+
+    .onoffswitch {
+      position: relative;
+      width: 10px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .post-blocked {
+      /* font-size: 16px; */
+      /* padding-top: 35px; */
+      padding-bottom: 2px;
+      max-width: 260px;
+      text-align: center;
+      margin: 0 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .report-group {
+      margin-top: 0px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <div class="header">
+    <label class="title">CoronaBLOCK is:</label>
+    <div class="onoffswitch">
+      <div class="toggle-button-cover">
+        <div class="button-cover">
+          <div class="button r" id="button-3">
+            <input type="checkbox" class="checkbox" id="onoff">
+            <div class="knobs"></div>
+            <div class="layer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p id="subtext">Coronavirus posts <b>will</b> show up on your facebook feed</p>
+    <div class="post-blocked">Posts blocked: <span class="blocked"></span></div>
+  </div>
+  <div class="container">
+    <p class="title">If You Feel Better</p>
+    <ul class="listgroup">
+      <li class="listgroupitem">
+        <a title="Click to share!" href="#" id="share">
+          <div class="badge">
+            <i class="fa fa-share" aria-hidden="true"></i>
+          </div>
+          <text class="maintext">Share this on Facebook</text>
+        </a>
+      </li>
+      <li class="listgroupitem">
+        <a title="Click to donate!" href="#" id="donation">
+          <div class="badge">
+            <i class="fas fa-coffee" aria-hidden="true"></i>
+          </div>
+          <text class="maintext">Donate to this project</text>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <p class="title">Did we miss a post?</p>
+    <ul class="listgroup report-group">
+      <li class="listgroupitem">
+        <a title="Click here to go to the report page!" href="#" id="share">
+          <text class="maintext report-text">Click here to report it!</text>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

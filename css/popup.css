@@ -1,0 +1,170 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  /* transition: all 0.5s ease-in-out; */
+  height: 80%;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.popup .title {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4267B1;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+    
+.popup .listgroup {
+    list-style-type: none;
+    list-style: none;
+    padding: 5px 15px 5px 15px;
+}
+
+.popup .inputSection {
+  position: absolute;
+  top: 40px;
+  height: 80px;
+  left: 20px;
+  right: 20px;
+}
+
+.popup ul {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  top: 120px;
+  bottom: 80px;
+  left: 20px;
+  right: 20px;
+  overflow: scroll;
+  margin: 0;
+  padding: 0px;
+  border: 1px solid #ccc;
+}
+
+
+.popup .listgroupitem {
+  font: 200 12px/1.5 Helvetica, Verdana, sans-serif;
+  color: #7C7C7C;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  display: block;
+  padding: 7px 0px 7px 0px;
+  background-color: #fff;
+  font-weight: bold;
+  margin-top:5px;
+
+}
+
+.popup .listgroupitem .maintext {
+  font-weight: bold;
+  color: #797979;
+}
+
+.popup .listgroupitem a {
+  text-decoration: none;
+}
+
+a:focus {outline:0;}
+
+.popup .listgroupitem .subtext {
+  font-weight: lighter;
+  color: #B3B3B3;
+}
+
+.popup .listgroupitem .badge {
+  float: right;
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Helvetica, Verdana, sans-serif;
+  color: #7E7E7E;
+  font-size: 12px;
+  background: #F6F7F9;
+  padding: 0px 12px 0px 12px;
+  border: solid #E1E2E4 2px;
+  text-decoration: none;
+}
+
+.popup .listgroupitem .btn:hover {
+  background: #d1d1d1;
+  text-decoration: none;
+}
+
+.popup .listgroupitem:last-child {
+  border: none;
+}
+
+.popup .acceptbutton {
+   position: absolute;
+  height: 40px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #d1d1d1;
+  border-radius: 10px;
+  background-color: #4267B1;
+  padding: 0px 12px 0px 12px;
+}
+
+.popup .acceptbutton label {
+   position: absolute;
+  height: 30px;
+  bottom: 0px;
+  left: 20px;
+  right: 20px;
+  font-family: Helvetica, Verdana, sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+}
+
+.popup .acceptbutton:hover {
+  background-color: #345392;
+}
+
+
+
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 80%;
+  }
+}
