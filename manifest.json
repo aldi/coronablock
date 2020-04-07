@@ -1,0 +1,36 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "CoronaBLOCK for Facebook",
+  "description": "Take a break from Facebook posts related to COVID-19",
+  "author": "aldi",
+  "version": "2.0.0",
+  "manifest_version": 3,
+  "permissions": ["tabs", "storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; base-uri 'none'; connect-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'"
+  },
+  "host_permissions": ["https://*.facebook.com/*"],
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/*"],
+      "run_at": "document_start",
+      "js": ["js/filters.js"]
+    }
+  ]
+}
