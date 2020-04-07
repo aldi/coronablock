@@ -1,0 +1,158 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #E9EBEE;
+    font-family: Helvetica, Verdana, sans-serif;
+    box-sizing: border-box;
+    width: 380px;
+}
+
+body {
+    overflow: scroll;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.header {
+    background-color: #4267B1;
+    padding: 15px;
+    /* padding-left: 40px;
+    padding-top: 15px; */
+}
+
+.header .title {
+    float:left;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    padding-top: 3px;
+}
+
+.header #subtext {
+  text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    clear: both;
+    padding-top: 20px;
+    /* padding-bottom:15px; */
+}
+
+.container {
+    margin: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+    border-color: transparent;
+    border-left-width: 0;
+    border-right-width: 0;
+    border: 2px solid #dddfe2;
+}
+
+.container .title {
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4267B1;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+    
+.container .listgroup {
+    list-style-type: none;
+    list-style: none;
+    padding: 0px 10px 0px 32px;
+    
+}
+
+.container .listgroupitem {
+  font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+  color: #7C7C7C;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  display: block;
+  padding: 8px 15px 8px 0px;
+  background-color: #fff;
+  margin-right:20px;
+  font-weight: bold;
+  margin-top:5px;
+
+}
+
+.container .listgroupitem .maintext {
+  font-weight: bold;
+  color: #797979;
+}
+
+.container .listgroupitem a {
+  text-decoration: none;
+}
+
+a:focus {outline:0;}
+
+.container .listgroupitem .subtext {
+  font-weight: lighter;
+  color: #B3B3B3;
+}
+
+.container .listgroupitem .badge {
+  float: right;
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Helvetica, Verdana, sans-serif;
+  color: #7E7E7E;
+  font-size: 14px;
+  background: #F6F7F9;
+  padding: 0px 10px 0px 10px;
+  border: solid #E1E2E4 2px;
+  text-decoration: none;
+}
+
+.container .listgroupitem .btn:hover {
+  background: #d1d1d1;
+  text-decoration: none;
+}
+
+.container .listgroupitem:last-child {
+  border: none;
+}
+
+.container li a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 200px;
+}
+
+.container li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
+.container button:focus { outline:0 !important; }
+
+
+.btn {
+    background-color: #3A589B; 
+}
+
+
+
