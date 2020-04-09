@@ -238,12 +238,12 @@
                         sendResponse(count);
                     }
                     break;
-
                 default:
                     console.error("Unrecognised message: ", message);
             }
             return true;
         }
     );
+
 
 })();
