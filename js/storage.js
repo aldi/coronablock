@@ -22,10 +22,10 @@ function setSwitch() {
 		select.checked = coronaOn;
 		if (coronaOn) {
 			chrome.browserAction.setIcon({ path: "images/icon128.png" });
-			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>won't</b> appear on your facebook feed";
+			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>won't</b> appear on your Facebook feed";
 		} else {
 			chrome.browserAction.setIcon({ path: "images/iconoff128.png" });
-			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>will</b> appear on your facebook feed";
+			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>will</b> appear on your Facebook feed";
 		}
 	});
 }
@@ -36,10 +36,14 @@ function updateOptions() {
 	chrome.storage.sync.set({ 'coronaOn': select.checked }, function () {
 		if (select.checked) {
 			chrome.browserAction.setIcon({ path: "images/icon128.png" });
-			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>won't</b> appear on your facebook feed <b>*reload facebook*</b>";
+			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>won't</b> appear on your Facebook feed <b>*reload facebook*</b>";
+			document.getElementById("subtext2").style.display = "block";
+			document.getElementById("subtext3").style.display = "none";
 		} else {
 			chrome.browserAction.setIcon({ path: "images/iconoff128.png" });
-			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>will</b> appear on your facebook feed <b>*reload facebook*</b>";
+			document.getElementById("subtext").innerHTML = "Coronavirus posts <b>will</b> appear on your Facebook feed <b>*reload facebook*</b>";
+			document.getElementById("subtext2").style.display = "none";
+			document.getElementById("subtext3").style.display = "block";
 		}
 	});
 }

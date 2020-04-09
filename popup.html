@@ -47,7 +47,7 @@
       top: 50%;
       width: 74px;
       height: 36px;
-      margin: -20px auto 0 auto;
+      margin: 0 auto;
       overflow: hidden;
     }
 
@@ -117,7 +117,7 @@
 
     .onoffswitch {
       position: relative;
-      width: 10px;
+      /* width: 10px; */
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -126,7 +126,6 @@
     .post-blocked {
       /* font-size: 16px; */
       /* padding-top: 35px; */
-      padding-bottom: 2px;
       max-width: 260px;
       text-align: center;
       margin: 0 auto;
@@ -138,8 +137,33 @@
       color: #fff;
     }
 
+
+    .warning {
+      /* font-size: 16px; */
+      padding-top: 10px;
+      padding-bottom: 2px;
+      max-width: 260px;
+      text-align: center;
+      margin: 0 auto;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: 18px;
+      color: rgb(255, 129, 0);
+    }
+
     .report-group {
       margin-top: 0px !important;
+    }
+
+    .logo-text {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    #subtext2,
+    #subtext3,
+    .warning {
+      display: none;
     }
   </style>
 </head>
@@ -147,20 +171,21 @@
 <body>
   <div id="fb-root"></div>
   <div class="header">
-    <label class="title">CoronaBLOCK is:</label>
+    <div class="logo-text">
+      <label class="title">CoronaBLOCK is:</label>
+    </div>
     <div class="onoffswitch">
-      <div class="toggle-button-cover">
-        <div class="button-cover">
-          <div class="button r" id="button-3">
-            <input type="checkbox" class="checkbox" id="onoff">
-            <div class="knobs"></div>
-            <div class="layer"></div>
-          </div>
-        </div>
+      <div class="button r" id="button-3">
+        <input type="checkbox" class="checkbox" id="onoff">
+        <div class="knobs"></div>
+        <div class="layer"></div>
       </div>
     </div>
-    <p id="subtext">Coronavirus posts <b>will</b> show up on your facebook feed</p>
-    <div class="post-blocked">Posts blocked: <span class="blocked"></span></div>
+    <p id="subtext">Coronavirus posts <b>will</b> show up on your Facebook feed</p>
+    <p id="subtext2"><i class="fas fa-sync" aria-hidden="true"></i><b> please reload the page </b><i class="fas fa-sync" aria-hidden="true"></i></p>
+    <p id="subtext3"><i class="fas fa-sync" aria-hidden="true"></i><b> please reload the page </b><i class="fas fa-sync" aria-hidden="true"></i></p>
+    <div class="post-blocked">Posts blocked: <span class="blocked">-</span></div>
+    <div class="warning">This will not work on this site. Please go to Facebook and refresh the page.</div>
   </div>
   <div class="container">
     <p class="title">If You Feel Better</p>
@@ -187,7 +212,7 @@
     <p class="title">Did we miss a post?</p>
     <ul class="listgroup report-group">
       <li class="listgroupitem">
-        <a title="Click here to go to the report page!" href="#" id="share">
+        <a title="Click here to go to the report page!" href="https://forms.gle/ir3prKiZYWM31FD2A" id="report">
           <text class="maintext report-text">Click here to report it!</text>
         </a>
       </li>
