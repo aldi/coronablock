@@ -1,9 +1,9 @@
 {
     "update_url": "https://clients2.google.com/service/update2/crx",
     "name": "CoronaBLOCK for Facebook",
-    "description": "Blocks All Coronavirus Related Posts From Facebook",
+    "description": "Block all Coronavirus related posts on Facebook",
     "author": "aldi",
-    "version": "1.0",
+    "version": "1.0.1",
     "manifest_version": 2,
     "permissions": [
         "*://*.facebook.com/*",
@@ -33,7 +33,7 @@
             ],
             "run_at": "document_start",
             "js": [
-                "js/facebook_filter.js"
+                "js/filters.js"
             ]
         }
     ]
