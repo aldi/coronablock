@@ -1,9 +1,9 @@
 {
     "update_url": "https://clients2.google.com/service/update2/crx",
     "name": "CoronaBLOCK for Facebook",
-    "description": "Block all Coronavirus related posts on Facebook",
+    "description": "Take a break from Facebook posts related to COVID-19",
     "author": "Aldi Duzha",
-    "version": "1.0.1",
+    "version": "1.1.2",
     "manifest_version": 2,
     "permissions": [
         "*://*.facebook.com/*",
