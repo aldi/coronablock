@@ -14,6 +14,7 @@ function report() {
     chrome.tabs.create({ url: "https://forms.gle/KS9EeYtchGMhRxP67" });
 }
 
+//ΑΥΤΟ ΤΟ ΠΑΠΑΡΙ ΕΔΩ ΘΑ ΜΑΣ ΧΑΛΑΣΕΙ ΤΗ ΔΟΥΛΕΙΑ ΟΛΗ
 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.tabs.sendMessage(tabs[0].id, { type: "getCount" }, function (count) {
         if (chrome.runtime.lastError) {
