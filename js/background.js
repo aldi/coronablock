@@ -42,16 +42,22 @@ chrome.storage.sync.get(['data'], function (item) {
   }
 });
 
-
-// Transfers data to other scripts
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  switch (request.operation) {
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  switch (message.operation) {
     case 'passData':
       sendResponse({
         filters: filterData
       });
-      break;
   }
-  // Support asynchronous response.
+  if (message.badgeText) {
+    chrome.tabs.get(sender.tab.id, function (tab) {
+      if (chrome.runtime.lastError) {
+        return;
+      }
+      if (tab.index >= 0) { // tab is visible
+        chrome.browserAction.setBadgeText({ tabId: tab.id, text: message.badgeText });
+      }
+    });
+  }
   return true;
 });

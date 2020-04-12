@@ -1,5 +1,5 @@
 (function () {
-    var count = -1;
+    var count = 0;
     chrome.storage.sync.get(['coronaOn', 'data'], function (item) {
         var observer = new MutationObserver(function (mutations) {
             if (!item.coronaOn) {
@@ -10,20 +10,6 @@
                 "wuhan",
                 "coronavirus ",
                 "coronaviruses",
-                "coronavirinae",
-                "coronaviridae",
-                "orthocoronavirinae",
-                "corona",
-                "korona",
-                "coronav",
-                "covid",
-                "covid-19",
-                "co-19",
-                "cov-19",
-                "ncov-19",
-                "h-cov",
-                "mers",
-                "sars",
                 "sars-cov",
                 "sars-cov-2",
                 "2019-ncov",
@@ -32,31 +18,11 @@
                 "virus",
                 "viruses",
                 "alphacoronavirus",
-                "alphacoronaviruses",
-                "betacoronavirus",
-                "betacoronaviruses",
-                "gammacoronavirus",
-                "gammacoronaviruses",
-                "deltacoronavirus",
-                "deltacoronaviruses",
-                "vaccine",
-                "vaccines",
-                "vaccination",
-                "vaccinations",
-                "riboviria",
                 "who",
                 "bat",
                 "bats",
                 "infection",
                 "infections",
-                "outbreak",
-                "outbreaks",
-                "pandemic",
-                "mask",
-                "masks",
-                "bioweapon",
-                "bioweapons",
-                "epidemic",
                 "epidemics",
                 "epidemiologic",
                 "disease",
@@ -79,12 +45,37 @@
                 "cov",
                 "bcv",
                 "fcov",
+                "coronavirinae",
+                "coronaviridae",
+                "orthocoronavirinae",
+                "corona",
+                "korona",
+                "coronav",
+                "covid",
+                "covid-19",
+                "co-19",
+                "cov-19",
+                "ncov-19",
+                "h-cov",
+                "mers",
+                "sars",
                 "tgev",
                 "ibv",
                 "bronchitis",
                 "respiratory",
                 "bovine",
                 "pneumonia",
+                "#coronavirus",
+                "#covid-19",
+                "#ncov-19",
+                "#stayathome",
+                "#stayhome",
+                "#virus",
+                "#corona",
+                "#itscoronatime",
+                "#koronavirus",
+                "#pandemic",
+                "#covid",
                 "κορονοϊός",
                 "κορωνοϊός",
                 "κορονοιος",
@@ -122,10 +113,30 @@
                 "נגיף קורונה",
                 "コロナウイルス",
                 "კორონავირუსი",
+                "outbreak",
+                "outbreaks",
+                "pandemic",
+                "mask",
+                "masks",
+                "bioweapon",
+                "bioweapons",
+                "epidemic",
                 "коронавирус",
                 "មេរោគឆ្លង",
                 "ಕರೋನವೈರಸ್",
                 "코로나 바이러스",
+                "alphacoronaviruses",
+                "betacoronavirus",
+                "betacoronaviruses",
+                "gammacoronavirus",
+                "gammacoronaviruses",
+                "deltacoronavirus",
+                "deltacoronaviruses",
+                "vaccine",
+                "vaccines",
+                "vaccination",
+                "vaccinations",
+                "riboviria",
                 "koronavirusas",
                 "koronavīruss",
                 "коронавирус",
@@ -202,23 +213,24 @@
             mutations.forEach(function (mutation) {
                 var newNodes = mutation.addedNodes;
                 if (newNodes !== null) {
-                    if (document.querySelector('.userContentWrapper') == null) { //if facebook new
+                    if (document.querySelector('.userContentWrapper') == null) { //fn
                         var nodes = document.querySelectorAll('[role="article"]');
                     }
-                    else {  //if facebook old
+                    else {  //fo
                         var nodes = document.querySelectorAll('.userContentWrapper');
                     }
                     for (var ii = 0, nn = nodes.length; ii < nn; ii++) {
                         var text = nodes[ii] ? nodes[ii].textContent.toLowerCase() : '';
-                        // filterArray are the keywords
                         for (var filterItem in filterArray) {
                             if (text && text.indexOf(filterArray[filterItem].toLowerCase()) >= 0 && nodes[ii].style.display != 'none') {
                                 nodes[ii].style.display = 'none';
                                 count += 1;
+                                chrome.runtime.sendMessage({ badgeText: String(count) });
                             }
                         }
                     }
                 }
+
             });
         });
 
@@ -230,13 +242,12 @@
         });
     });
 
+
     chrome.runtime.onMessage.addListener(
         function (message, sender, sendResponse) {
             switch (message.type) {
                 case "getCount":
-                    if (count != -1) {
-                        sendResponse(count);
-                    }
+                    sendResponse(count);
                     break;
                 default:
                     console.error("Unrecognised message: ", message);
@@ -244,6 +255,5 @@
             return true;
         }
     );
-
 
 })();
