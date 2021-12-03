@@ -7,6 +7,7 @@
             }
 
             var filterArray = [
+                "Omicron",
                 "wuhan",
                 "coronavirus ",
                 "coronaviruses",
