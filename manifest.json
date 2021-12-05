@@ -5,7 +5,7 @@
   "author": "Aldi Duzha",
   "version": "1.2.0",
   "manifest_version": 2,
-  "permissions": ["*://*.facebook.com/*", "activeTab", "storage", "webRequest"],
+  "permissions": ["*://*.facebook.com/*", "activeTab", "storage"],
   "browser_action": {
     "default_icon": "images/icon48.png",
     "default_popup": "popup.html"
