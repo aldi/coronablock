@@ -3,7 +3,7 @@
   "name": "CoronaBLOCK for Facebook",
   "description": "Take a break from Facebook posts related to COVID-19",
   "author": "Aldi Duzha",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "manifest_version": 2,
   "permissions": ["*://*.facebook.com/*", "activeTab", "storage"],
   "browser_action": {
